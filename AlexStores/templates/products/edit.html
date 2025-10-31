@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Editar Acessório — TechStore{% endblock %}
+{% block content %}
+<div class="card" style="max-width:720px;margin:auto;">
+  <h3>Editar Acessório</h3>
+  <form class="form" method="POST">
+    {{ form.hidden_tag() }} {{ form.name(class="input") }}
+    {% for error in form.name.errors %}
+        <span style="color: red;">{{ error }}</span><br>
+    {% endfor %}
+
+    {{ form.description(class="input") }}
+    {% for error in form.description.errors %}
+        <span style="color: red;">{{ error }}</span><br>
+    {% endfor %}
+    
+    {{ form.price(class="input") }}
+    {% for error in form.price.errors %}
+        <span style="color: red;">{{ error }}</span><br>
+    {% endfor %}
+
+    <div style="display:flex;gap:8px;margin-top:6px;">
+      <button class="btn btn-primary" type="submit">Atualizar</button>
+      <a class="btn btn-outline" href="{{ url_for('product_bp.list_products') }}">Cancelar</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

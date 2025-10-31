@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Acessórios — AlexStore{% endblock %}
+{% block content %}
+<div class="card">
+  <div style="display:flex;justify-content:space-between;align-items:center;">
+    <h3>Meus Acessórios</h3>
+    <a class="btn btn-primary" href="{{ url_for('product_bp.add_product') }}">Adicionar</a>
+  </div>
+  <div class="product-list">
+    {% for p in products %}
+    <div class="product-item">
+      <h4>{{ p.name }}</h4>
+      <p class="text-muted">{{ p.description or 'Sem descrição' }}</p>
+      <div class="price">R$ {{ '%.2f'|format(p.price) }}</div>
+      <div style="margin-top:8px;">
+        <form method="POST" action="{{ url_for('product_bp.delete_product', id=p.id) }}">
+          <button class="btn btn-primary" style="background:#d62828" type="submit">Excluir</button>
+        </form>
+      </div>
+    </div>
+    {% else %}
+    <p class="text-muted" style="margin-top:12px;">Nenhum acessório cadastrado.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+

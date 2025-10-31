@@ -1,0 +1,139 @@
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+}
+
+
+.input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  width: 100%;
+  box-sizing: border-box; 
+}
+
+.input:focus {
+  border-color: #1e63c6;
+  outline: none;
+}
+
+
+.form textarea.input {
+    resize: vertical;
+}
+
+
+.btn-primary {
+    background: #1e63c6;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+}
+.btn-primary:hover {
+    background: #154c95;
+}
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6fa;
+  color: #1a1a1a;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+.header {
+  background: #1e63c6;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .brand {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.header nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-weight: 500;
+}
+
+.header nav a:hover {
+  text-decoration: underline;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 25px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #1e63c6;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: #1e63c6;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #1551a3;
+}
+
+.text-muted {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.85rem;
+  color: #777;
+}

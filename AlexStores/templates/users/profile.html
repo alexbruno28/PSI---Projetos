@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Perfil — AlexStore{% endblock %}
+{% block content %}
+<div class="card">
+  <div class="profile">
+    <div class="avatar">{{ user.username[0]|upper }}</div>
+    <div>
+      <h2>{{ user.username }}</h2>
+      <p>Email: {{ user.email }}</p>
+      <p>Bem-vindo(a) à sua área da AlexStore!</p>
+      <div style="margin-top:10px;">
+        <a class="btn btn-primary" href="{{ url_for('product_bp.list_products') }}">Ver Meus Acessórios</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

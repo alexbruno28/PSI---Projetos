@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Registro — AlexStore{% endblock %}
+{% block content %}
+<div class="card" style="max-width:400px; margin:auto; margin-top: 50px;">
+  <h3>Registro de Usuário</h3>
+  <form method="POST" class="form">
+    {{ form.hidden_tag() }} {{ form.username(class="input", placeholder="Usuário") }}
+    {% for error in form.username.errors %}
+        <span style="color: red; font-size: 0.9em;">{{ error }}</span><br>
+    {% endfor %}
+
+    {{ form.email(class="input", placeholder="Email") }}
+    {% for error in form.email.errors %}
+        <span style="color: red; font-size: 0.9em;">{{ error }}</span><br>
+    {% endfor %}
+    
+    {{ form.password(class="input", type="password", placeholder="Senha") }}
+    {% for error in form.password.errors %}
+        <span style="color: red; font-size: 0.9em;">{{ error }}</span><br>
+    {% endfor %}
+
+    {{ form.confirm_password(class="input", type="password", placeholder="Confirmar Senha") }}
+    {% for error in form.confirm_password.errors %}
+        <span style="color: red; font-size: 0.9em;">{{ error }}</span><br>
+    {% endfor %}
+    
+    <button class="btn btn-primary" type="submit">Registrar</button>
+  </form>
+  <p style="text-align: center; margin-top: 15px;">
+    Já tem conta? <a href="{{ url_for('auth.login') }}">Fazer Login</a>
+  </p>
+</div>
+{% endblock %}
